@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["arch","Platform dependent vendor intrinsics."]]});
