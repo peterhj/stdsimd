@@ -6,14 +6,167 @@
 .target sm_35
 .address_size 64
 
-	// .globl	_stdsimd_nvptx_test_syncthreads_kernel
+	// .globl	_stdsimd_nvptx_test_kernel__syncthreads
 
-.visible .entry _stdsimd_nvptx_test_syncthreads_kernel()
+.visible .entry _stdsimd_nvptx_test_kernel__syncthreads()
 {
 
 
 	bar.sync 	0;
 	ret;
+
+}
+	// .globl	_stdsimd_nvptx_test_kernel__block_dim_x
+.visible .entry _stdsimd_nvptx_test_kernel__block_dim_x()
+{
+	.reg .b32 	%r<2>;
+	.reg .b64 	%rd<2>;
+
+	mov.u32 	%r1, %ntid.x;
+	mov.u64 	%rd1, 4096;
+	st.u32 	[%rd1], %r1;
+	ret;
+
+}
+	// .globl	_stdsimd_nvptx_test_kernel__block_dim_y
+.visible .entry _stdsimd_nvptx_test_kernel__block_dim_y()
+{
+	.reg .b32 	%r<2>;
+	.reg .b64 	%rd<2>;
+
+	mov.u32 	%r1, %ntid.y;
+	mov.u64 	%rd1, 4096;
+	st.u32 	[%rd1], %r1;
+	ret;
+
+}
+	// .globl	_stdsimd_nvptx_test_kernel__block_dim_z
+.visible .entry _stdsimd_nvptx_test_kernel__block_dim_z()
+{
+	.reg .b32 	%r<2>;
+	.reg .b64 	%rd<2>;
+
+	mov.u32 	%r1, %ntid.z;
+	mov.u64 	%rd1, 4096;
+	st.u32 	[%rd1], %r1;
+	ret;
+
+}
+	// .globl	_stdsimd_nvptx_test_kernel__block_idx_x
+.visible .entry _stdsimd_nvptx_test_kernel__block_idx_x()
+{
+	.reg .b32 	%r<2>;
+	.reg .b64 	%rd<2>;
+
+	mov.u32 	%r1, %ctaid.x;
+	mov.u64 	%rd1, 4096;
+	st.u32 	[%rd1], %r1;
+	ret;
+
+}
+	// .globl	_stdsimd_nvptx_test_kernel__block_idx_y
+.visible .entry _stdsimd_nvptx_test_kernel__block_idx_y()
+{
+	.reg .b32 	%r<2>;
+	.reg .b64 	%rd<2>;
+
+	mov.u32 	%r1, %ctaid.y;
+	mov.u64 	%rd1, 4096;
+	st.u32 	[%rd1], %r1;
+	ret;
+
+}
+	// .globl	_stdsimd_nvptx_test_kernel__block_idx_z
+.visible .entry _stdsimd_nvptx_test_kernel__block_idx_z()
+{
+	.reg .b32 	%r<2>;
+	.reg .b64 	%rd<2>;
+
+	mov.u32 	%r1, %ctaid.z;
+	mov.u64 	%rd1, 4096;
+	st.u32 	[%rd1], %r1;
+	ret;
+
+}
+	// .globl	_stdsimd_nvptx_test_kernel__grid_dim_x
+.visible .entry _stdsimd_nvptx_test_kernel__grid_dim_x()
+{
+	.reg .b32 	%r<2>;
+	.reg .b64 	%rd<2>;
+
+	mov.u32 	%r1, %nctaid.x;
+	mov.u64 	%rd1, 4096;
+	st.u32 	[%rd1], %r1;
+	ret;
+
+}
+	// .globl	_stdsimd_nvptx_test_kernel__grid_dim_y
+.visible .entry _stdsimd_nvptx_test_kernel__grid_dim_y()
+{
+	.reg .b32 	%r<2>;
+	.reg .b64 	%rd<2>;
+
+	mov.u32 	%r1, %nctaid.y;
+	mov.u64 	%rd1, 4096;
+	st.u32 	[%rd1], %r1;
+	ret;
+
+}
+	// .globl	_stdsimd_nvptx_test_kernel__grid_dim_z
+.visible .entry _stdsimd_nvptx_test_kernel__grid_dim_z()
+{
+	.reg .b32 	%r<2>;
+	.reg .b64 	%rd<2>;
+
+	mov.u32 	%r1, %nctaid.z;
+	mov.u64 	%rd1, 4096;
+	st.u32 	[%rd1], %r1;
+	ret;
+
+}
+	// .globl	_stdsimd_nvptx_test_kernel__thread_idx_x
+.visible .entry _stdsimd_nvptx_test_kernel__thread_idx_x()
+{
+	.reg .b32 	%r<2>;
+	.reg .b64 	%rd<2>;
+
+	mov.u32 	%r1, %tid.x;
+	mov.u64 	%rd1, 4096;
+	st.u32 	[%rd1], %r1;
+	ret;
+
+}
+	// .globl	_stdsimd_nvptx_test_kernel__thread_idx_y
+.visible .entry _stdsimd_nvptx_test_kernel__thread_idx_y()
+{
+	.reg .b32 	%r<2>;
+	.reg .b64 	%rd<2>;
+
+	mov.u32 	%r1, %tid.y;
+	mov.u64 	%rd1, 4096;
+	st.u32 	[%rd1], %r1;
+	ret;
+
+}
+	// .globl	_stdsimd_nvptx_test_kernel__thread_idx_z
+.visible .entry _stdsimd_nvptx_test_kernel__thread_idx_z()
+{
+	.reg .b32 	%r<2>;
+	.reg .b64 	%rd<2>;
+
+	mov.u32 	%r1, %tid.z;
+	mov.u64 	%rd1, 4096;
+	st.u32 	[%rd1], %r1;
+	ret;
+
+}
+	// .globl	_stdsimd_nvptx_test_kernel_trap
+.visible .entry _stdsimd_nvptx_test_kernel_trap()
+{
+
+
+	trap;
+	trap;
 
 }
 
